@@ -2,41 +2,32 @@
 
 Projet fil rouge pour les Saisons 6 & 7
 
-## Atelier
+## Analyse du besoin client
 
-- [Atelier E01](./docs/ateliers/E01.md)
-- [Atelier E02](./docs/ateliers/E02.md)
-- [Atelier E03](./docs/ateliers/E03.md)
-- [Atelier E04](./docs/ateliers/E04.md)
+On veut une app de board Kaban :
 
-## Workflow
+- Autant de liste qu'on le souhaite
+- Une liste doit avoir un nom
+- Une liste doit avoir une position
+- Autant de cartes qu'on le souhaite
+- Les cartes doivent se trouver dans une liste
+- Une carte doit avoir un titre
+- Une carte doit avoir une position au sein de sa liste
+- Une carte peut avoir 0 ou 1 couleur
+- Une carte peut avoir 0 ou N labels
 
-On va mettre en place un workflow particulier sur les S06 & S07 !
+- Possibilité de gérer des labels ?
 
-L'idée c'est de ne jamais travailler dans notre branche master (celle des apprennants). Pour chaque atelier on va tirer une nouvelle branche : `atelier-e01`, `atelier-e02`, etc pour pousser notre travail dedans.
+## Users stories
 
-Ensuite, à la fin de la correction en cours, le prof push ses modifs et nous (apprenants), on les recupère dans notre branche master.
+Par ici pour [les users stories](./user_stories.md)
 
-On a ainsi, une branche master propre à chaque instant, contenant toujours la bonne correction.
+## MCD
 
-Et on part de cette correction pour attaquer l'atelier pratique suivant, et ainsi s'assurrer de tous avoir la même code base.
+Il se dégage clairement 3 entités suite à notre analyse :
 
-![workflow](docs/cours/workflow_git.png)
+- Liste
+- Carte
+- Label
 
-### Commandes
-
-**Prérequis** : On doit rajouter un `remote` à notre repos git local. Ainsi, on viendra connecter notre repo local sur le repos distant du prof !
-
-```sh
-# RAJOUT D'UN REMOTE qu'on va nommer 'correction' qui pointera vers le repos à l'adresse : git@github.com:O-Clock-Watt/S06E01-oKanban-API-RemOclock.git
-git remote add correction git@github.com:O-Clock-Watt/S06E01-oKanban-API-RemOclock.git
-```
-
-**Contexte** : On a finit une journée de correction, le prof a push ses modifs sur son repos. On doit les recup sur notre master
-
-1. On est sur notre branche d'atelier, il faut donc qu'on se déplace sur la branche master : `git checkout master`
-2. On vérifit d'être sur master : `git branch`
-3. On recup la correction de la journée depuis le repo du prof : `git pull --no-edit --allow-unrelated-histories -X theirs correction master`
-4. On peut maintenant partir sur une nouvelle branche à partir de la correction complète : `git checkout -b atelier-e0X`
-5. Et on peut bosser dedans as usual : `git add .`, `git commit -m "..."` & `git push`
-6. Et le lendemain on fait pareil !
+On peut également réflechir à rajouter des entités pour nos V2 & V3 (User et autres)
