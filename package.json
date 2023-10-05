@@ -1,0 +1,30 @@
+{
+  "name": "okanban-api",
+  "version": "1.0.0",
+  "description": "Projet fil rouge pour les Saisons 6 & 7",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "db": "psql -U okanbanwatt -d okanbanwatt -f ./data/import_tables_and_seeding.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-Clock-Watt/S06E01-oKanban-API-RemOclock.git"
+  },
+  "author": "RemOclock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-Clock-Watt/S06E01-oKanban-API-RemOclock/issues"
+  },
+  "homepage": "https://github.com/O-Clock-Watt/S06E01-oKanban-API-RemOclock#readme",
+  "dependencies": {
+    "dotenv": "^16.2.0",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.11.0",
+    "sequelize": "^6.32.0"
+  }
+}
